@@ -2,7 +2,8 @@
 
 This project is a simplified social media page where users can create posts, upload images, and view account information in a modal popup. It is built using **HTML**, **CSS**, and **JavaScript (ES Modules)**.
 
----
+## 📌 Live Demo (GitHub Pages)
+👉 **https://rataulharman.github.io/harman_fakebook/**
 
 ## Features
 
@@ -27,7 +28,6 @@ This project is a simplified social media page where users can create posts, upl
   - Groups  
   - Monetization status  
 
----
 
 ## Object-Oriented Structure
 
@@ -52,7 +52,6 @@ Methods:
 - Extends `User`  
 - Contains its own `getInfo()` that uses the parent method  
 
----
 
 ## Technologies Used
 - HTML5  
@@ -60,7 +59,6 @@ Methods:
 - JavaScript (ES Modules)  
 - Local Development Server (Live Server)
 
----
 
 ## How to Run
 1. Clone or download this repository  
