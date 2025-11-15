@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* Simple dark theme layout inspired by your screenshots */
 :root{
   --bg:#131416;
   --panel:#1f2226;
@@ -10,7 +9,6 @@
   --card-text:#222;
 }
 
-*{box-sizing:border-box}
 body{
   margin:0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -157,6 +155,7 @@ body{
   flex-direction:column;
 }
 .post-meta .name{ font-weight:700; font-size:18px; color: #0b0b0b }
+
 .post-meta .sub{ font-size:13px; color:#666; margin-top:2px }
 
 /* post body */
@@ -176,7 +175,7 @@ body{
   display: block;  
 }
 
-/* modal styles */
+
 /* Modal background */
 .modal {
   position: fixed;
@@ -209,7 +208,7 @@ body{
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Close X */
+
 .modal-close {
   position: absolute;
   top: 10px;
@@ -230,7 +229,7 @@ body{
   margin-bottom: 10px;
 }
 
-/* Name + username */
+
 .user-name {
   margin: 5px 0;
   font-size: 26px;
