@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+/* Simple dark theme layout inspired by your screenshots */
+:root{
+  --bg:#131416;
+  --panel:#1f2226;
+  --muted:#bfc4c9;
+  --accent:#1e90ff;
+  --card:#ffffff;
+  --card-text:#222;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background:var(--bg);
+  color:var(--muted);
+  min-height:100vh;
+}
+
+/* topbar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 200px;
+  background:linear-gradient(#242629,#1f2226);
+  border-bottom:4px solid rgba(255,255,255,0.02);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+.brand{
+  color:var(--accent);
+  font-weight:700;
+  font-size:26px;
+  
+}
+.nav{
+  display:flex;
+  gap: 18px;
+  color:#dfe4e8;
+  margin-left: -50px;
+}
+.nav a{
+  cursor:default;
+  opacity:0.9;
+}
+.avatar-wrap{ cursor:pointer; }
+.avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,255,255,0.07);
+}
+
+/* main container */
+.container{
+  max-width:660px;
+  margin:28px auto;
+  padding:0 18px;
+}
+
+/* composer / post form */
+.post-form{
+  background:rgba(255,255,255,0.02);
+  border-radius:8px;
+  padding:18px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+}
+.post-form textarea{
+  width:100%;
+  border:none;
+  background:transparent;
+  color:#d7dadd;
+  font-size:16px;
+  resize:vertical;
+  outline:none;
+  min-height:110px;
+}
+.form-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+}
+.file-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  color:var(--muted);
+}
+.file-name{
+  margin-left:6px;
+  color:#e6e6e6;
+  font-size:14px;
+}
+.file-label input{ display:none; }
+
+.btn{
+  background:var(--accent);
+  border:none;
+  color:white;
+  padding:10px 14px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+}
+.btn:active{ transform:translateY(1px) }
+
+/* posts list */
+.posts{
+  margin-top:22px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* single post card */
+.post-card{
+  background:var(--card);
+  border-radius:8px;
+  padding:16px;
+  color:var(--card-text);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.07);
+}
+.post-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  /* gap:12px; */
+}
+
+.post-date {
+  font-size: 17px;
+  color: #060606;
+}
+.post-user{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.post-user img{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(0,0,0,0.05);
+}
+.post-meta{
+  display:flex;
+  flex-direction:column;
+}
+.post-meta .name{ font-weight:700; font-size:18px; color: #0b0b0b }
+.post-meta .sub{ font-size:13px; color:#666; margin-top:2px }
+
+/* post body */
+.post-body{
+  margin-top:12px;
+  font-size:15px;
+  color:#111;
+}
+
+.post-image {
+  margin: 12px auto 0 auto;
+  width: auto;       
+  max-width: 100%;   
+  height: auto;      
+  border-radius: 6px;
+  border: 8px solid rgba(0,0,0,0.03);
+  display: block;  
+}
+
+/* modal styles */
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.55);
+  z-index:50;
+}
+.modal.hidden{ display:none; }
+.modal-content{
+  background:var(--panel);
+  color:var(--muted);
+  width:420px;
+  border-radius:8px;
+  padding:18px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+.modal-close{
+  position:absolute;
+  right:12px;
+  top:8px;
+  font-size:24px;
+  background:none;
+  border:none;
+  color:var(--muted);
+  cursor:pointer;
+}
+.account-info{
+  white-space:pre-wrap;
+  background:transparent;
+  border-radius:6px;
+  padding-top:6px;
+  color:#e7e7e7;
+  margin-top:8px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .topbar {
+    padding: 16px 20px;  
+  }
+}
+
+@media (max-width:600px){
+  .topbar {
+    padding: 16px 2px;   
+  }
+
+  
+  .container{ padding:0 12px; }
+  
+  .nav {
+    gap: 5px;
+    margin-left: 5px;
+  }
+}

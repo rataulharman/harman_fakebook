@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Head contains information (meta-data) about about the HTML document -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Harmandeep Singh">
+    <meta name="description" content="My first web page">
+    <meta name="keyword" content="html, css, web, web development, javascript">
+    <link rel="icon" href="./assets/media/favicon.png?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/styles.css" media="all">
+    <title>Images in HTML</title>
+    <!-- Add icon here later -->
+    </head>
+    <body>
+  <header class="topbar">
+    <div class="brand">Fakebook</div>
+    <nav class="nav">
+      <a>Friends</a>
+      <a>Pages</a>
+      <a>Groups</a>
+      <a>My ads</a>
+      <a>Settings</a>
+    </nav>
+    <div class="avatar-wrap" id="openModalBtn">
+      <img class="avatar" src="./assets/media/avatar.jpg" alt="user">
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="composer">
+      <form id="postForm" class="post-form" novalidate>
+        <textarea id="postText" placeholder="Any thoughts to share?" rows="6"></textarea>
+
+        <div class="form-footer">
+          <label class="file-label" for="postImage">
+            <span class="file-icon"> <img src="./assets/media/image-icon.png" alt="image-icon" ></span>
+            <input id="postImage" type="file" accept="image/*" />
+            <span id="fileName" class="file-name"></span>
+          </label>
+
+          <button id="postBtn" class="btn" type="submit">Post</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="posts" class="posts"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close">&times;</button>
+      <h2>Account Info</h2>
+      <pre id="accountInfo" class="account-info"></pre>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/script/main.js"></script>
+
+  <!-- <script src="./assets/script/modal.js"></script> -->
+</body>   
+</html>
