@@ -2,7 +2,6 @@
 
 import Subscriber from "./subscriber.js";
 
-/* ====== Utility Functions ====== */
 function listen(event, selector, callback) {
   selector.addEventListener(event, callback);
 }
@@ -11,7 +10,6 @@ function select(selector) {
   return document.querySelector(selector);
 }
 
-/* ====== DOM Elements ====== */
 const postForm = select('#postForm');
 const postText = select('#postText');
 const postImage = select('#postImage');
@@ -22,18 +20,18 @@ const fileNameSpan = select('#fileName');
 // Modal
 const modal = select('#modal');
 const avatarBtn = select('#openModalBtn');
-const closeModalX = select('#closeModal');     // FIXED
+const closeModalX = select('#closeModal');    
 const closeModalBtn = select('#closeModalBtn');
 
-// Modal fields based on your HTML
-const m_name = select('.user-name');           // FIXED
-const m_username = select('.username');        // FIXED
-const infoItems = document.querySelectorAll('.info-list p'); // email, job, etc.
 
-/* ====== Global Variables ====== */
+const m_name = select('.user-name');           
+const m_username = select('.username');        
+const infoItems = document.querySelectorAll('.info-list p'); 
+
+
 let selectedImage = null;
 
-/* ====== Create Subscriber ====== */
+
 const mySubscriber = new Subscriber(
   2005,
   'Harmandeep Singh',
@@ -44,7 +42,7 @@ const mySubscriber = new Subscriber(
   true
 );
 
-/* ====== File Input Handling ====== */
+
 listen('change', postImage, () => {
   if (postImage.files && postImage.files[0]) {
     selectedImage = postImage.files[0];
@@ -56,12 +54,12 @@ listen('change', postImage, () => {
   togglePostButton();
 });
 
-/* ====== Enable/Disable Post Button ====== */
+
 function togglePostButton() {
   postBtn.disabled = !postText.value.trim() && !selectedImage;
 }
 
-/* ====== Clear Form Inputs ====== */
+
 function clearInputs() {
   postText.value = '';
   postImage.value = '';
@@ -70,7 +68,7 @@ function clearInputs() {
   togglePostButton();
 }
 
-/* ====== Create Post ====== */
+
 function makePost() {
   if (!postText.value.trim() && !selectedImage) return;
 
@@ -103,23 +101,19 @@ function makePost() {
   clearInputs();
 }
 
-/* ====== POST EVENT ====== */
+// Post Event
 listen('click', postBtn, (e) => {
   e.preventDefault();
   makePost();
 });
 
-/* ====== NEW: Fill Modal ====== */
+
 function openStyledModal() {
 
   m_name.textContent = mySubscriber.name;
   m_username.textContent = "@" + mySubscriber.userName;
 
-  // Your info list:
-  // item 0 = email
-  // item 1 = profession
-  // item 2 = group
-  // item 3 = monetize
+  
   infoItems[0].innerHTML = `<i class="icon">📧</i> ${mySubscriber.email}`;
   infoItems[1].innerHTML = `<i class="icon">📄</i> ${mySubscriber.pages.join(", ")}`;
   infoItems[2].innerHTML = `<i class="icon">👥</i> ${mySubscriber.groups.join(", ")}`;
@@ -128,15 +122,14 @@ function openStyledModal() {
   modal.classList.remove("hidden");
 }
 
-/* ====== Close Modal ====== */
+
 function closeStyledModal() {
   modal.classList.add("hidden");
 }
 
-/* ====== Modal Listeners ====== */
+// Modal Listener
 avatarBtn.addEventListener("click", openStyledModal);
 closeModalX.addEventListener("click", closeStyledModal);
 closeModalBtn.addEventListener("click", closeStyledModal);
 
-/* ====== Initial Setup ====== */
 togglePostButton();
