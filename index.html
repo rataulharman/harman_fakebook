@@ -49,12 +49,26 @@
 
   <!-- Modal -->
   <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
-    <div class="modal-content">
-      <button id="closeModal" class="modal-close">&times;</button>
-      <h2>Account Info</h2>
-      <pre id="accountInfo" class="account-info"></pre>
-    </div>
+  <div class="modal-content account-card">
+    <button id="closeModal" class="modal-close">&times;</button>
+
+    <img class="profile-pic" src="./assets/media/avatar.jpg" alt="avatar">
+
+    <h2 class="user-name" id="modalName"></h2>
+<p class="username" id="modalUsername"></p>
+
+<div class="info-list">
+  <p><i class="icon">📧</i> <span id="modalEmail"></span></p>
+  <p><i class="icon">📄</i> Pages: <span id="modalPages"></span></p>
+  <p><i class="icon">👥</i> Groups: <span id="modalGroups"></span></p>
+  <p><i class="icon">💰</i> Can Monetize: <span id="modalMonetize"></span></p>
+</div>
+
+
+    <button class="close-btn" id="closeModalBtn">Close</button>
   </div>
+</div>
+
 
   <script type="module" src="./assets/script/main.js"></script>
 

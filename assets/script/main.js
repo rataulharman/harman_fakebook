@@ -19,10 +19,16 @@ const postBtn = select('#postBtn');
 const postsSection = select('#posts');
 const fileNameSpan = select('#fileName');
 
+// Modal
 const modal = select('#modal');
-const closeModalBtn = select('#closeModal');
 const avatarBtn = select('#openModalBtn');
-const accountInfo = select('#accountInfo');
+const closeModalX = select('#closeModal');     // FIXED
+const closeModalBtn = select('#closeModalBtn');
+
+// Modal fields based on your HTML
+const m_name = select('.user-name');           // FIXED
+const m_username = select('.username');        // FIXED
+const infoItems = document.querySelectorAll('.info-list p'); // email, job, etc.
 
 /* ====== Global Variables ====== */
 let selectedImage = null;
@@ -97,29 +103,40 @@ function makePost() {
   clearInputs();
 }
 
-/* ====== Post Button Event ====== */
+/* ====== POST EVENT ====== */
 listen('click', postBtn, (e) => {
   e.preventDefault();
   makePost();
 });
 
-/* ====== Modal Display ====== */
-function displayUserInfo() {
-  accountInfo.textContent = mySubscriber.getInfo();
+/* ====== NEW: Fill Modal ====== */
+function openStyledModal() {
+
+  m_name.textContent = mySubscriber.name;
+  m_username.textContent = "@" + mySubscriber.userName;
+
+  // Your info list:
+  // item 0 = email
+  // item 1 = profession
+  // item 2 = group
+  // item 3 = monetize
+  infoItems[0].innerHTML = `<i class="icon">📧</i> ${mySubscriber.email}`;
+  infoItems[1].innerHTML = `<i class="icon">📄</i> ${mySubscriber.pages.join(", ")}`;
+  infoItems[2].innerHTML = `<i class="icon">👥</i> ${mySubscriber.groups.join(", ")}`;
+  infoItems[3].innerHTML = `<i class="icon">💰</i> Can Monetize: ${mySubscriber.canMonetize ? "Yes" : "No"}`;
+
+  modal.classList.remove("hidden");
 }
 
-function openModal() {
-  displayUserInfo();
-  modal.classList.remove('hidden');
+/* ====== Close Modal ====== */
+function closeStyledModal() {
+  modal.classList.add("hidden");
 }
 
-function closeModal() {
-  modal.classList.add('hidden');
-}
-
-/* ====== Modal Event Listeners ====== */
-listen('click', avatarBtn, openModal);
-listen('click', closeModalBtn, closeModal);
+/* ====== Modal Listeners ====== */
+avatarBtn.addEventListener("click", openStyledModal);
+closeModalX.addEventListener("click", closeStyledModal);
+closeModalBtn.addEventListener("click", closeStyledModal);
 
 /* ====== Initial Setup ====== */
 togglePostButton();

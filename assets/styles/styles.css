@@ -177,43 +177,103 @@ body{
 }
 
 /* modal styles */
-.modal{
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,0,0,0.55);
-  z-index:50;
+/* Modal background */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
-.modal.hidden{ display:none; }
-.modal-content{
-  background:var(--panel);
-  color:var(--muted);
-  width:420px;
-  border-radius:8px;
-  padding:18px;
-  position:relative;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+
+.hidden {
+  display: none;
 }
-.modal-close{
-  position:absolute;
-  right:12px;
-  top:8px;
-  font-size:24px;
-  background:none;
-  border:none;
-  color:var(--muted);
-  cursor:pointer;
+
+/* Modal card */
+.account-card {
+  background: #2c2f33;
+  padding: 30px;
+  border-radius: 16px;
+  width: 350px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  animation: pop 0.2s ease-out;
 }
-.account-info{
-  white-space:pre-wrap;
-  background:transparent;
-  border-radius:6px;
-  padding-top:6px;
-  color:#e7e7e7;
-  margin-top:8px;
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
+
+/* Close X */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Profile picture */
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Name + username */
+.user-name {
+  margin: 5px 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.username {
+  color: #b9bbbd;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Info List */
+.info-list {
+  text-align: left;
+  margin: 0 auto 20px;
+  width: 80%;
+  line-height: 1.7;
+}
+
+.info-list p {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-style: normal;
+  font-size: 18px;
+}
+
+/* Close Button */
+.close-btn {
+  background-color: #0d6efd;
+  padding: 8px 20px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 
 /* responsive */
 @media (max-width: 900px) {
