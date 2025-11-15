@@ -37,7 +37,7 @@ let selectedImage = null;
 const mySubscriber = new Subscriber(
   2005,
   'Harmandeep Singh',
-  'harmandeep_s',
+  'rataul_harman',
   'rataulharmandeep@gmail.com',
   ['Tech Page', 'Photography'],
   ['Developers Group', 'Cricketer'],
