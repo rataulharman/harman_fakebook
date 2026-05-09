@@ -2,6 +2,10 @@
 
 This project is a simplified social media page where users can create posts, upload images, and view account information in a modal popup. It is built using **HTML**, **CSS**, and **JavaScript (ES Modules)**.
 
+## Screenshot
+<img width="1920" height="909" alt="ssfakebook" src="https://github.com/user-attachments/assets/2b5fd608-a44b-4c99-87f0-03493a5ed502" />
+
+
 ## 📌 Live Demo (GitHub Pages)
 👉 **https://rataulharman.github.io/harman_fakebook/**
 
@@ -53,7 +57,7 @@ Methods:
 - Contains its own `getInfo()` that uses the parent method  
 
 
-## Technologies Used
+## Tech Stack
 - HTML5  
 - CSS3  
 - JavaScript (ES Modules)  
