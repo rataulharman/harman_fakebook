@@ -6,8 +6,8 @@ This project is a simplified social media page where users can create posts, upl
 <img width="1920" height="909" alt="ssfakebook" src="https://github.com/user-attachments/assets/2b5fd608-a44b-4c99-87f0-03493a5ed502" />
 
 
-## 📌 Live Demo (GitHub Pages)
-👉 **https://rataulharman.github.io/harman_fakebook/**
+## Live Demo (GitHub Pages)
+ **https://rataulharman.github.io/harman_fakebook/**
 
 ## Features
 
